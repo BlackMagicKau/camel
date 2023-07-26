@@ -13,7 +13,7 @@
 # =========== Copyright 2023 @ CAMEL-AI.org. All Rights Reserved. ===========
 from typing import Any, Dict
 
-from camel.models import BaseModelBackend, OpenAIModel, StubModel
+from camel.models import BaseModelBackend, OpenAIModel, StubModel, VertexAIModel 
 from camel.typing import ModelType
 
 
@@ -50,6 +50,8 @@ class ModelFactory:
             model_class = OpenAIModel
         elif model_type == ModelType.STUB:
             model_class = StubModel
+        elif model_type == ModelType.VERTEX_AI:
+            model_class == VertexAIModel
         else:
             raise ValueError("Unknown model")
 
